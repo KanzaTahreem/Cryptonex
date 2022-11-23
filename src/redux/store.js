@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import teamReducer from './teams/team';
+import coinsReducer from './AllCoins/coins';
 
 const store = configureStore({
   reducer: {
-    teams: teamReducer,
+    crypto: coinsReducer,
   },
 });
 
