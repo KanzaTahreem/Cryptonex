@@ -1,0 +1,43 @@
+.list-container {
+  width: 85%;
+  gap: 5em 3em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 6em auto;
+  justify-content: center;
+}
+
+.coin-button {
+  border: none;
+  background: transparent;
+}
+
+.coin-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 0;
+  background: #30333c;
+  box-shadow: 0 11px 14px 5px rgb(0 0 0 / 25%);
+  border-radius: 1em;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  width: 14em;
+}
+
+.inner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+}
+
+.card-img {
+  width: 7em;
+}
+
+.card-name {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

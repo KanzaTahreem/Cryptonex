@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 const CoinsData = (props) => {
   const { image, name } = props;
   return (
-    <div>
+    <div className="inner-card">
       <img
         src={image}
         alt={`${image}-logo`}
+        className="card-img"
       />
-      <p>{name}</p>
+      <p className="card-name">{name}</p>
     </div>
   );
 };
