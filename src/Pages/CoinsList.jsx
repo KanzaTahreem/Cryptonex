@@ -7,12 +7,11 @@ import '../styles/CoinsList.css';
 
 const CryptoList = () => {
   const { dataArray, loading } = useSelector((state) => state.crypto);
-
   const navigate = useNavigate();
-  const openCoinDetails = (id) => {
+  const openCoinDetails = (coin) => {
     navigate('/details', {
       state: {
-        id,
+        coin,
       },
     });
   };
@@ -25,7 +24,7 @@ const CryptoList = () => {
           {loading
             ? 'loading...'
             : dataArray.map((coin) => (
-              <button key={coin.id} type="button" onClick={() => openCoinDetails(coin.id)} className="coin-button">
+              <button key={coin.id} type="button" onClick={() => openCoinDetails(coin)} className="coin-button">
                 <li className="coin-card">
                   <CoinsData
                     image={coin.image}
