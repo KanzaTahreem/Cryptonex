@@ -9,7 +9,6 @@ import CoinDetails from './Pages/CoinDetails';
 
 function App() {
   const dispatch = useDispatch();
-  dispatch(fetchDataFromApi());
 
   useEffect(() => {
     dispatch(fetchDataFromApi());
