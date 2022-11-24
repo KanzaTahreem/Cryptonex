@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => (
-  <header>
-    <h1 className="title">Premiere League</h1>
+  <div className="navbar-container">
     <nav className="navbar">
       <ul className="navlinks">
         <li className="navItem">
@@ -16,10 +15,9 @@ const Navbar = () => (
             Coins
           </NavLink>
         </li>
-
       </ul>
     </nav>
-  </header>
+  </div>
 
 );
 
