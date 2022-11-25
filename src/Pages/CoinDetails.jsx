@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import CoinChart from '../components/CoinChart';
 import NumericData from '../components/NumericData';
 import fetchChartFromApi from '../redux/CoinChart/thunk';
 import '../styles/CoinDetails.css';
+import CoinChart from '../components/CoinChart';
 
 const CoinDetails = () => {
   const dispatch = useDispatch();
@@ -21,9 +21,11 @@ const CoinDetails = () => {
 
   return (
     <section className="coin-deatils-container">
-      <button type="button" onClick={handleBackBtn}>
-        <IoIosArrowBack />
-      </button>
+      <div className="back-btn">
+        <button type="button" onClick={handleBackBtn}>
+          <IoIosArrowBack />
+        </button>
+      </div>
       <NumericData />
       <CoinChart />
     </section>
