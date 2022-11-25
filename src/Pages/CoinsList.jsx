@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import '../styles/CoinsList.css';
 
 const CryptoList = () => {
-  const { dataArray, loading } = useSelector((state) => state.crypto);
+  const { filteredSearchArray, loading } = useSelector((state) => state.crypto);
   const navigate = useNavigate();
   const openCoinDetails = (coin) => {
     navigate('/details', {
@@ -23,7 +23,7 @@ const CryptoList = () => {
         <ul className="list-container">
           {loading
             ? 'loading...'
-            : dataArray.map((coin) => (
+            : filteredSearchArray.map((coin) => (
               <button key={coin.id} type="button" onClick={() => openCoinDetails(coin)} className="coin-button">
                 <li className="coin-card">
                   <CoinsData
