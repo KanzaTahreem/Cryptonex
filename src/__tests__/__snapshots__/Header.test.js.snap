@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="header-container"
+>
+  <h2
+    className="quote"
+    data-testid="quote"
+  >
+    The future of Money is digital currency
+  </h2>
+  <form>
+    <input
+      data-testid="input"
+      id="name"
+      name="name"
+      onChange={[Function]}
+      placeholder="Search here..."
+      type="text"
+    />
+  </form>
+</div>
+`;
