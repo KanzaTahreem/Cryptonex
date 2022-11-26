@@ -4,12 +4,19 @@ exports[`renders correctly 1`] = `
 <div
   className="inner-card"
 >
+  <p
+    className="card-name"
+  >
+    . 
+  </p>
   <img
     alt="undefined-logo"
     className="card-img"
   />
   <p
-    className="card-name"
-  />
+    className="price"
+  >
+    Price: undefined
+  </p>
 </div>
 `;

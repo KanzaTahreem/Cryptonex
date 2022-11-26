@@ -1,4 +1,5 @@
 import React from 'react';
+import millify from 'millify';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import CoinsData from '../components/CoinsData';
@@ -23,15 +24,19 @@ const CryptoList = () => {
         <ul className="list-container" data-testid="coins-list-container">
           {loading
             ? 'loading...'
-            : filteredSearchArray.map((coin) => (
-              <button key={coin.id} type="button" onClick={() => openCoinDetails(coin)} className="coin-button">
-                <li className="coin-card">
-                  <CoinsData
-                    image={coin.image}
-                    name={coin.name}
-                  />
-                </li>
-              </button>
+            : filteredSearchArray.map((coin, index) => (index < 100
+              ? (
+                <button key={coin.id} type="button" onClick={() => openCoinDetails(coin)} className="coin-button">
+                  <li className="coin-card">
+                    <CoinsData
+                      rank={coin?.market_cap_rank}
+                      name={coin?.name}
+                      image={coin?.image}
+                      currentPrice={`$ ${millify(coin?.current_price)}`}
+                    />
+                  </li>
+                </button>
+              ) : ''
             ))}
         </ul>
       </div>
