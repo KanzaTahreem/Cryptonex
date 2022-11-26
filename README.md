@@ -59,8 +59,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://rebaz36.github.io/React-Capstone/)
-- [Loom Video Pesentation](https://www.loom.com/share/93a75a6d92874aa2b6209784f258926c)
+- [Live Demo](https://kanzatahreem.github.io/Crypto-Analysis/)
+- [Loom Video Pesentation](https://www.loom.com/share/b75aeada007d478bac3e2bf311105a51)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
