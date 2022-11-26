@@ -18,7 +18,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<CryptoList />} />
+        <Route path="/Crypto-Analysis" element={<CryptoList />} />
         <Route path="/details" element={<CoinDetails />} />
       </Routes>
     </>

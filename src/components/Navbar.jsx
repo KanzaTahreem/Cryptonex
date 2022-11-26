@@ -8,8 +8,7 @@ const Navbar = () => (
       <ul className="navlinks" data-testid="navlinks">
         <li className="navItem">
           <NavLink
-            to="/"
-            end
+            to="/Crypto-Analysis"
             className={({ isActive }) => (isActive ? 'activelink' : undefined)}
           >
             Coins

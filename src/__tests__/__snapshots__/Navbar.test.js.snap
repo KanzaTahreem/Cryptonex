@@ -15,9 +15,7 @@ exports[`renders correctly 1`] = `
         className="navItem"
       >
         <a
-          aria-current="page"
-          className="activelink"
-          href="/"
+          href="/Crypto-Analysis"
           onClick={[Function]}
         >
           Coins
