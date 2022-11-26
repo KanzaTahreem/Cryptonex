@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchChart, FETCH_CHART } from './chart';
 
 const fetchChartFromApi = createAsyncThunk(FETCH_CHART, async (coinId, thunkApi) => {
-  const response = await fetch(`http://localhost:3002/v4/details/chart/${coinId}`, {
+  const response = await fetch(`https://cryptfacts.up.railway.app/v4/details/chart/${coinId}`, {
     method: 'GET',
   });
 
