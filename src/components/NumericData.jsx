@@ -2,14 +2,17 @@ import millify from 'millify';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  BsGraphUp, BsGraphDown, BsCheck2All, BsHash,
+  BsGraphUp, BsGraphDown, BsCheck2All, BsHash, BsTagFill,
 } from 'react-icons/bs';
 import { ImStatsBars } from 'react-icons/im';
 import { HiArrowNarrowUp, HiArrowNarrowDown } from 'react-icons/hi';
 import { GiProgression } from 'react-icons/gi';
 import { RiExchangeFundsFill } from 'react-icons/ri';
-import { BiCoinStack, BiDollarCircle } from 'react-icons/bi';
+import {
+  BiCoinStack, BiDollarCircle, BiDumbbell, BiLink,
+} from 'react-icons/bi';
 import '../styles/CoinDetails.css';
+import { ExternalLink } from 'react-external-link';
 
 const NumericData = () => {
   const location = useLocation();
@@ -17,36 +20,62 @@ const NumericData = () => {
 
   return (
     <div className="coin-details" data-testid="coin-stats">
-      <div className="coin">
-        <div>
-          <p className="name">
-            {coin?.name}
-            {' '}
-            {`(${coin?.symbol?.toUpperCase()})`}
-          </p>
-          <img src={coin?.image} alt={`${coin?.image}-logo`} />
+      <div>
+        <div className="coin">
+          <div>
+            <p className="name">
+              {coin?.name}
+              {' '}
+              {`(${coin?.symbol?.toUpperCase()})`}
+            </p>
+            <img src={coin?.image} alt={`${coin?.image}-logo`} />
+          </div>
         </div>
 
-        <div>
-          <div className="price">
-            <p>
-              <span><BiDollarCircle /></span>
-              <span>Price</span>
-            </p>
-            <p>{`$ ${millify(coin?.current_price)}`}</p>
-          </div>
-
-          <div className="rank">
-            <p>
-              <span><BsHash /></span>
-              <span>Rank</span>
-            </p>
-            <p>{coin?.market_cap_rank}</p>
+        <div className="other-stats">
+          <div>
+            <div className="other-stats-info">
+              <p>
+                <span><BsHash /></span>
+                <span>Rank</span>
+              </p>
+              <p>{coin?.market_cap_rank}</p>
+            </div>
+            <div className="other-stats-info">
+              <p>
+                <span><BiDollarCircle /></span>
+                <span>Price</span>
+              </p>
+              <p>{`$ ${millify(coin?.current_price)}`}</p>
+            </div>
+            <div className="other-stats-info">
+              <p>
+                <span><BiDumbbell /></span>
+                <span>Total Volume</span>
+              </p>
+              <p>{`$ ${millify(coin?.total_volume)}`}</p>
+            </div>
+            <div className="other-stats-info">
+              <p>
+                <span><BsTagFill /></span>
+                <span>Tags</span>
+              </p>
+              <p>{coin?.tags}</p>
+            </div>
+            <div className="other-stats-info">
+              <p>
+                <span><BiLink /></span>
+                <span>Website</span>
+              </p>
+              <p><ExternalLink className="visit" href={coin?.website}>Visit</ExternalLink></p>
+            </div>
           </div>
         </div>
       </div>
 
       <h2 className="stats-title">
+        More
+        {' '}
         {coin?.name}
         {' '}
         {`(${coin?.symbol?.toUpperCase()})`}
