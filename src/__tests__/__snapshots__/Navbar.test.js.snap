@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="navbar-container"
+>
+  <nav
+    className="navbar"
+  >
+    <ul
+      className="navlinks"
+      data-testid="navlinks"
+    >
+      <li
+        className="navItem"
+      >
+        <a
+          aria-current="page"
+          className="activelink"
+          href="/"
+          onClick={[Function]}
+        >
+          Coins
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
