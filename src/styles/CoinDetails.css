@@ -17,27 +17,27 @@
   color: #fff;
 }
 
+.back-btn {
+  width: 65vw;
+  margin: 0 auto;
+}
+
 .back-btn > button {
-  padding: 0.6em;
-  border-radius: 100%;
-  border: 1px solid cornflowerblue;
-  background: transparent;
   display: flex;
+  padding: 0.6em;
+  color: #fff;
+  font-size: 1.3em;
+  border-radius: 100%;
   align-items: center;
+  background: transparent;
   box-shadow: 0 2px 10px black;
-  align-self: flex-start;
+  border: 1px solid cornflowerblue;
 }
 
 .coin-details {
   width: 65vw;
   display: flex;
   margin: 0 auto;
-  flex-direction: column;
-}
-
-.coin {
-  gap: 1em;
-  display: flex;
   flex-direction: column;
 }
 
@@ -59,6 +59,37 @@
   box-shadow: 0 11px 14px 5px rgb(0 0 0 / 25%);
 }
 
+.coin-details > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-stats {
+  width: 35em;
+  display: flex;
+  padding: 1em 0;
+  border-radius: 1em;
+  background: #30333c;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 11px 14px 5px rgb(0 0 0 / 25%);
+}
+
+.other-stats > div:first-child {
+  gap: 1em;
+  width: 100%;
+  display: flex;
+  padding: 1em 2em;
+  flex-direction: column;
+}
+
+.coin {
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
 .coin > div:first-child {
   gap: 1.3em;
   padding: 2em 0;
@@ -76,25 +107,25 @@
   filter: drop-shadow(1px 2px 4px black);
 }
 
-.price,
-.rank {
-  width: 70%;
+.other-stats-info {
   display: flex;
-  font-size: 1.1em;
   font-weight: 500;
   justify-content: space-between;
   filter: drop-shadow(1px 2px 4px black);
 }
 
-.price p,
-.rank p {
+.other-stats-info p {
   gap: 0.8em;
   display: flex;
 }
 
-.price p:nth-child(2),
-.rank p:nth-child(2) {
+.other-stats-info p:nth-child(2) {
   color: #bbb;
+}
+
+.visit {
+  color: #bbb;
+  text-decoration: none;
 }
 
 .stats-title {
@@ -125,8 +156,7 @@
 }
 
 .stats-name > span:first-child,
-.rank span:first-child,
-.price span:first-child {
+.other-stats-info span:first-child {
   color: cornflowerblue;
   font-size: 1.3em;
 }
@@ -139,4 +169,44 @@
   color: #bbb;
   font-weight: 500;
   filter: drop-shadow(1px 2px 4px black);
+}
+
+@media screen and (max-width: 768px) {
+  .coin-details {
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .coin {
+    align-self: center;
+  }
+
+  .coin-details > div {
+    gap: 2em;
+    flex-direction: column;
+  }
+
+  .other-stats > div:first-child {
+    padding: 1em;
+  }
+
+  .other-stats {
+    width: 100%;
+  }
+
+  .other-stats-info {
+    font-size: 0.9em;
+  }
+
+  .coin-stats {
+    padding: 2em 1em;
+  }
+
+  .stats-name {
+    font-size: 0.8em;
+  }
+
+  .value {
+    font-size: 0.8em;
+  }
 }
