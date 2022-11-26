@@ -57,10 +57,26 @@
   }
 
   .list-container {
-    gap: 2em;
+    gap: 0;
+    display: grid;
+    width: inherit;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .coin-card {
-    width: 80vw;
+    width: inherit;
+    border-radius: 0;
+    box-shadow: none;
+    height: 16em;
+    border: 1px solid #0000217d;
+  }
+
+  li:first-child {
+    background-color: transparent;
+  }
+
+  .coin-button:nth-child(4n + 1),
+  .coin-button:nth-child(4n) {
+    background-color: #21265c;
   }
 }
