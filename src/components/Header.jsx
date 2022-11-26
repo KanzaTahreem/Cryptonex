@@ -11,9 +11,9 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <blackquote className="quote">The future of Money is digital currency</blackquote>
+      <h2 className="quote" data-testid="quote">The future of Money is digital currency</h2>
       <form>
-        <input type="text" name="name" id="name" placeholder="Search here..." onChange={handleSearch} />
+        <input type="text" name="name" id="name" placeholder="Search here..." onChange={handleSearch} data-testid="input" />
       </form>
     </div>
   );

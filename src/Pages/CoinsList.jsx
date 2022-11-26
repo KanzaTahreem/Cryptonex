@@ -20,7 +20,7 @@ const CryptoList = () => {
     <>
       <Header />
       <div className="coins-container">
-        <ul className="list-container">
+        <ul className="list-container" data-testid="coins-list-container">
           {loading
             ? 'loading...'
             : filteredSearchArray.map((coin) => (
