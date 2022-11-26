@@ -1,4 +1,4 @@
-.coin-deatils-container {
+.coin-details-container {
   gap: 4em;
   display: flex;
   padding: 10em 0;
@@ -13,7 +13,7 @@
   background-image: linear-gradient(rgba(47, 47, 52, 0.8), #30333c), url('../assets/images/bg.jpg');
 }
 
-.coin-deatils-container > * {
+.coin-details-container > * {
   color: #fff;
 }
 
