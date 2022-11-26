@@ -5,7 +5,7 @@ import '../styles/Navbar.css';
 const Navbar = () => (
   <div className="navbar-container">
     <nav className="navbar">
-      <ul className="navlinks">
+      <ul className="navlinks" data-testid="navlinks">
         <li className="navItem">
           <NavLink
             to="/"
