@@ -93,7 +93,6 @@ const CoinChart = () => {
         tension: 0.1,
       }],
     });
-    console.log('Called');
   }, [chartData]);
 
   return (

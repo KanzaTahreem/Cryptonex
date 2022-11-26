@@ -5,7 +5,6 @@ import { IoIosArrowBack } from 'react-icons/io';
 import NumericData from '../components/NumericData';
 import fetchChartFromApi from '../redux/CoinChart/thunk';
 import '../styles/CoinDetails.css';
-// import CoinChart from '../components/CoinChart';
 
 const CoinDetails = () => {
   const dispatch = useDispatch();
@@ -27,7 +26,6 @@ const CoinDetails = () => {
         </button>
       </div>
       <NumericData />
-      {/* <CoinChart /> */}
     </section>
   );
 };

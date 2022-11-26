@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
-// import Header from './components/Header';
 import CryptoList from './Pages/CoinsList';
 import fetchDataFromApi from './redux/AllCoins/thunk';
 import CoinDetails from './Pages/CoinDetails';
