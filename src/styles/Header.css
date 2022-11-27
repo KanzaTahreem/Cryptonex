@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  padding: 15em 0;
+  padding: 15em 1em;
   text-align: center;
   flex-direction: column;
   background-size: cover;
@@ -11,7 +11,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   box-shadow: inset 0 -9px 35px rgb(0 0 0 / 25%);
-  background-image: linear-gradient(rgba(0, 0, 33, 0.8), #3033b9), url('../assets/images/bg.jpg');
+  background-image: linear-gradient(rgba(47, 47, 52, 0.8), #30333c), url('../assets/images/bg.jpg');
 }
 
 .quote {
@@ -24,7 +24,7 @@
 
 #name {
   box-shadow: 0 8px 6px -5px black;
-  width: 40%;
+  width: 40vw;
   color: #fff;
   height: 7vh;
   border: 1px solid #aaa;
@@ -40,4 +40,14 @@
   letter-spacing: 2px;
   filter: none;
   background-color: rgba(0, 0, 0, 0.122);
+}
+
+@media screen and (max-width: 768px) {
+  .quote {
+    font-size: 2.2em;
+  }
+
+  #name {
+    width: 80vw;
+  }
 }
