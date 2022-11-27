@@ -180,13 +180,13 @@
     align-self: center;
   }
 
-  .coin > div,
+  /* .coin > div,
   .other-stats,
   .coin-stats {
     border: 1px solid #0000217d;
     border-radius: 0;
     background: #30333c;
-  }
+  } */
 
   .coin-details > div {
     gap: 2em;

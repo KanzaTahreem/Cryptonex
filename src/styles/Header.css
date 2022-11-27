@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  padding: 15em 0;
+  padding: 15em 1em;
   text-align: center;
   flex-direction: column;
   background-size: cover;
@@ -24,7 +24,7 @@
 
 #name {
   box-shadow: 0 8px 6px -5px black;
-  width: 40%;
+  width: 40vw;
   color: #fff;
   height: 7vh;
   border: 1px solid #aaa;
@@ -40,4 +40,14 @@
   letter-spacing: 2px;
   filter: none;
   background-color: rgba(0, 0, 0, 0.122);
+}
+
+@media screen and (max-width: 768px) {
+  .quote {
+    font-size: 2.2em;
+  }
+
+  #name {
+    width: 80vw;
+  }
 }
