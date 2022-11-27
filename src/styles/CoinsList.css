@@ -24,7 +24,7 @@
   text-align: center;
   align-items: center;
   justify-content: end;
-  background: #1f1f70;
+  background: #30333c;
   flex-direction: column;
   box-shadow: 0 11px 14px 5px rgb(0 0 0 / 25%);
 }
@@ -77,6 +77,6 @@
 
   .coin-button:nth-child(4n + 1),
   .coin-button:nth-child(4n) {
-    background-color: #21265c;
+    background-color: #30333c;
   }
 }
