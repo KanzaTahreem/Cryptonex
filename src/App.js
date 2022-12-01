@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
-import CryptoList from './Pages/CoinsList';
+import CryptoList from './pages/CoinsList';
 import fetchDataFromApi from './redux/AllCoins/thunk';
-import CoinDetails from './Pages/CoinDetails';
+import CoinDetails from './pages/CoinDetails';
 
 function App() {
   const dispatch = useDispatch();
