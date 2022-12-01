@@ -1,103 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-
-import { Line } from 'react-chartjs-2';
-import zoomPlugin from 'chartjs-plugin-zoom';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  zoomPlugin,
-);
+import { Chart } from 'react-charts';
 
 const CoinChart = () => {
-  const chartData = useSelector((state) => state.chart.dataArray.prices);
-  const chartOptions = {
-    scales: {
-      y: {
-        min: 0,
-      },
+  const chartData = useSelector((state) => state.chart.dataArray);
+
+  const data = React.useMemo(
+    () => {
+      const mappedPrices = chartData.prices?.map((price, index) => [
+        index === chartData.prices.length - 1 ? 'Today' : `${chartData.prices.length - index}d`,
+        price[1],
+      ]);
+      return [
+        {
+          label: 'Series 1',
+          data: mappedPrices || [],
+        },
+      ];
     },
-    plugins: {
-      zoom: {
-        pan: {
-          enabled: true,
-        },
-        limits: {
-          // axis limits
-        },
-        zoom: {
-          zoom: {
-            wheel: {
-              enabled: true,
-            },
-            pinch: {
-              enabled: true,
-            },
-            mode: 'x',
-          },
-        },
-      },
-    },
-  };
+    [chartData],
+  );
 
-  const [chartConfigData, setChartConfigData] = useState({
-    labels: [],
-    datasets: [{
-      label: 'My First Dataset',
-      data: [],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1,
-    }],
-  });
-
-  const [xAxisLabels, setXAxisLabel] = useState([]);
-
-  const [yAxisLabels, setYAxisLabel] = useState([]);
-
-  useEffect(() => {
-    if (!chartData) {
-      return;
-    }
-    const newXAxisLabels = [];
-    const newYAxisLabels = chartData.map((data, index) => {
-      xAxisLabels.push(`${chartData.length - index}d`);
-      return data[1];
-    });
-
-    setXAxisLabel(newXAxisLabels);
-    setYAxisLabel(newYAxisLabels);
-    setChartConfigData({
-      labels: xAxisLabels,
-      datasets: [{
-        label: 'My First Dataset',
-        data: yAxisLabels,
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1,
-      }],
-    });
-  }, [chartData]);
+  const axes = React.useMemo(
+    () => [
+      { primary: true, type: 'ordinal', position: 'bottom' },
+      { type: 'linear', position: 'left' },
+    ],
+    [],
+  );
 
   return (
-    <div style={{ width: '80vw' }}>
-      <Line data={chartConfigData} options={chartOptions} />
+    <div
+      style={{
+        width: '80vw',
+        height: '400px',
+      }}
+    >
+      { chartData.prices && chartData.prices.length ? <Chart data={data} axes={axes} /> : 'Loading...'}
     </div>
   );
 };

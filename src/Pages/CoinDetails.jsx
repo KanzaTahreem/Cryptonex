@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import NumericData from '../components/NumericData';
 import fetchChartFromApi from '../redux/CoinChart/thunk';
+import CoinChart from '../components/CoinChart';
 import '../styles/CoinDetails.css';
 
 const CoinDetails = () => {
@@ -26,6 +27,7 @@ const CoinDetails = () => {
         </button>
       </div>
       <NumericData />
+      <CoinChart />
     </section>
   );
 };
