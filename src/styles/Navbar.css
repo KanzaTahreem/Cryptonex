@@ -1,13 +1,16 @@
 .navbar-container {
   gap: 1em;
-  width: 100%;
-  display: flex;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
   color: #fff;
+  display: flex;
   padding: 1.75em;
+  position: fixed;
   align-items: center;
+  background: #2f2f34;
   justify-content: center;
-  position: absolute;
-  z-index: 10;
   box-shadow: 0 10px 10px -5px black;
 }
 

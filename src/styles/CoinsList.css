@@ -1,3 +1,7 @@
+.coins-container {
+  margin-left: 200px;
+}
+
 .list-container {
   width: 85%;
   gap: 5em 3em;
