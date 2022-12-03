@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaCoins } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => (
@@ -11,6 +12,7 @@ const Navbar = () => (
             to="/Crypto-Analysis"
             className={({ isActive }) => (isActive ? 'activelink' : undefined)}
           >
+            <FaCoins />
             Coins
           </NavLink>
         </li>

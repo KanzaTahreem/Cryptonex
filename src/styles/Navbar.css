@@ -2,16 +2,16 @@
   gap: 1em;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 17vw;
   height: 100%;
-  color: #fff;
   display: flex;
-  padding: 1.75em;
   position: fixed;
   align-items: center;
-  background: #2f2f34;
   justify-content: center;
-  box-shadow: 0 10px 10px -5px black;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0 0 15px var(--surface-shadow1);
+  background: var(--surface3);
 }
 
 .navlinks {
@@ -21,11 +21,20 @@
 }
 
 .navItem > a {
+  gap: 0.5em;
   color: #aaa;
-  text-decoration: none;
-  font-size: 1.25em;
-  font-weight: 600;
+  display: flex;
+  font-weight: 700;
   letter-spacing: 5px;
-  text-shadow: 2px -4px 0 rgb(0 0 0 / 55%);
-  filter: drop-shadow(1px 2px 4px black);
+  text-decoration: none;
+  text-shadow: 3px -1px 0 var(--surface1);
+  filter: drop-shadow(1px 0 2px var(--surface2));
+}
+
+.navItem svg {
+  color: var(--brand);
+}
+
+.activelink {
+  color: var(--brand) !important;
 }
