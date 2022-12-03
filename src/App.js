@@ -13,8 +13,16 @@ function App() {
     dispatch(fetchDataFromApi());
   }, []);
 
+  const setTheme = (theme) => document.firstElementChild.setAttribute('color-scheme', theme);
+
+  const changeTheme = (e) => setTheme(e.target.checked ? 'dark' : 'light');
   return (
     <>
+      <label className="switch" htmlFor="toggle">
+        <input type="checkbox" id="toggle" onChange={changeTheme} />
+        <span className="slider round" />
+      </label>
+
       <Navbar />
       <Routes>
         <Route path="/Crypto-Analysis" element={<CryptoList />} />

@@ -1,3 +1,4 @@
+/* stylelint-disable csstree/validator */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -5,8 +6,150 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+
+  --brand-hue: 200;
+  --brand-saturation: 100%;
+  --brand-lightness: 50%;
+  --brand-light: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) 60%);
+  --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+  --text2-light: hsl(var(--brand-hue) 30% 30%);
+  --surface1-light: hsl(var(--brand-hue) 25% 90%);
+  --surface2-light: hsl(var(--brand-hue) 20% 99%);
+  --surface3-light: hsl(var(--brand-hue) 20% 92%);
+  --surface4-light: hsl(var(--brand-hue) 20% 85%);
+  --surface-shadow-light1: hsl(var(--brand-hue) 3% 65%);
+  --surface-shadow-light2: hsl(var(--brand-hue) 3% 70%);
+  --surface-shadow-light3: hsl(var(--brand-hue) 3% 80%);
+  --shadow-strength-light: 0.8em;
+  --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+  --text1-dark: hsl(var(--brand-hue) 15% 85%);
+  --text2-dark: hsl(var(--brand-hue) 5% 65%);
+  --surface1-dark: hsl(var(--brand-hue) 10% 10%);
+  --surface2-dark: hsl(var(--brand-hue) 10% 15%);
+  --surface3-dark: hsl(var(--brand-hue) 5%  20%);
+  --surface4-dark: hsl(var(--brand-hue) 5% 25%);
+  --surface-shadow-dark1: hsl(var(--brand-hue) 50% 3%);
+  --surface-shadow-dark2: hsl(var(--brand-hue) 50% 5%);
+  --surface-shadow-dark3: hsl(var(--brand-hue) 50% 33.33%);
+  --shadow-strength-dark: 0.8em;
 }
 
-body {
-  background: #2f2f34;
+:root {
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow1: var(--surface-shadow-light1);
+  --surface-shadow2: var(--surface-shadow-light2);
+  --surface-shadow3: var(--surface-shadow-light3);
+  --shadow-strength: var(--shadow-strength-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --surface1: var(--surface1-dark);
+    --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
+    --surface4: var(--surface4-dark);
+    --surface-shadow1: var(--surface-shadow-dark1);
+    --surface-shadow2: var(--surface-shadow-dark2);
+    --surface-shadow3: var(--surface-shadow-dark3);
+    --shadow-strength: var(--shadow-strength-dark);
+  }
+}
+
+[color-scheme="light"] {
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow1: var(--surface-shadow-light1);
+  --surface-shadow2: var(--surface-shadow-light2);
+  --surface-shadow3: var(--surface-shadow-light3);
+  --shadow-strength: var(--shadow-strength-light);
+}
+
+[color-scheme="dark"] {
+  color-scheme: dark;
+
+  --brand: var(--brand-dark);
+  --text1: var(--text1-dark);
+  --text2: var(--text2-dark);
+  --surface1: var(--surface1-dark);
+  --surface2: var(--surface2-dark);
+  --surface3: var(--surface3-dark);
+  --surface4: var(--surface4-dark);
+  --surface-shadow1: var(--surface-shadow-dark1);
+  --surface-shadow2: var(--surface-shadow-dark2);
+  --surface-shadow3: var(--surface-shadow-dark3);
+  --shadow-strength: var(--shadow-strength-dark);
+}
+
+.switch {
+  top: 20%;
+  left: 6%;
+  width: 51px;
+  height: 21px;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--surface2);
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 19px;
+  left: 4px;
+  bottom: 2px;
+  background-color: var(--brand);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--surface1);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
 }
