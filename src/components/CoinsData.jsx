@@ -3,30 +3,43 @@ import PropTypes from 'prop-types';
 
 const CoinsData = (props) => {
   const {
-    rank, name, image, currentPrice,
+    rank, image, name, symbol, currentPrice,
+    oneHourPriceChange, oneDayPriceChange, oneWeekPriceChange,
+    totalVolume, marketCap,
   } = props;
   return (
-    <div className="inner-card">
-      <p className="card-name">
-        {rank}
-        {'. '}
-        {name}
-      </p>
-      <img
-        src={image}
-        alt={`${image}-logo`}
-        className="card-img"
-      />
-      <p className="price">{`Price: ${currentPrice}`}</p>
+    <div className="inner_card">
+      <p className="rank">{rank}</p>
+      <div>
+        <img
+          src={image}
+          alt={`${image}-logo`}
+          className="img"
+        />
+        <p className="name">{name}</p>
+        <p className="symbol">{symbol}</p>
+      </div>
+      <p className="price">{currentPrice}</p>
+      <p className="one_hour_price">{oneHourPriceChange}</p>
+      <p className="one_day_price">{oneDayPriceChange}</p>
+      <p className="one_week_price">{oneWeekPriceChange}</p>
+      <p className="total_volume">{totalVolume}</p>
+      <p className="market_cap">{marketCap}</p>
     </div>
   );
 };
 
 CoinsData.propTypes = {
-  rank: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  rank: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  currentPrice: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  symbol: PropTypes.string.isRequired,
+  currentPrice: PropTypes.string.isRequired,
+  oneHourPriceChange: PropTypes.string.isRequired,
+  oneDayPriceChange: PropTypes.string.isRequired,
+  oneWeekPriceChange: PropTypes.string.isRequired,
+  totalVolume: PropTypes.string.isRequired,
+  marketCap: PropTypes.string.isRequired,
 };
 
 export default CoinsData;

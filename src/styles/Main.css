@@ -4,7 +4,10 @@
 
 main {
   width: 80vw;
-  margin: 3em auto;
+  margin: 4em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6em;
 }
 
 .global-data {
@@ -24,6 +27,19 @@ main {
   border-bottom-left-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
   box-shadow: 0 6px 6px -5px var(--surface-shadow4);
+}
+
+.labels > p {
+  flex: 1;
+  display: flex;
+  color: var(--text0);
+}
+
+.inner_card > p {
+  flex: 1;
+  display: flex;
+  font-weight: 500;
+  color: var(--text2);
 }
 
 .global-data-card > p:first-child {
@@ -47,61 +63,85 @@ main {
   filter: drop-shadow(1px 0 2px var(--surface2));
 }
 
-.list-container {
-  width: 85%;
-  gap: 5em 3em;
+.labels {
   display: flex;
-  flex-wrap: wrap;
-  margin: 6em auto;
-  justify-content: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 1em 2em;
+  letter-spacing: 1px;
+  background: var(--surface4);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  justify-content: space-between;
+  text-shadow: 3px 1px var(--surface1);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.554));
 }
 
-.list-container > * {
-  color: #bbb;
+.labels > p:nth-child(2) {
+  flex: 3;
 }
 
-.coin-button {
-  border: none;
-  background: transparent;
-}
-
-.coin-card {
-  width: 15em;
+.currencies {
   display: flex;
-  padding: 1.5em 0;
-  border-radius: 1em;
-  text-align: center;
-  align-items: center;
-  justify-content: end;
-  background: #30333c;
   flex-direction: column;
-  box-shadow: 0 11px 14px 5px rgb(0 0 0 / 25%);
+  justify-content: center;
+  list-style-type: none;
 }
 
-.inner-card {
+.currency_btn {
+  border: none;
+}
+
+.currency_btn:nth-child(odd) {
+  background: var(--surface5);
+}
+
+.currency_btn:nth-child(even) {
+  background: var(--surface3);
+}
+
+.inner_card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.9em 2.5em;
+  justify-content: space-between;
+}
+
+.inner_card > div {
+  flex: 3;
   gap: 1em;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.card-img {
-  width: 7em;
-}
-
-.card-name {
-  color: #fff;
+.inner_card .rank {
+  gap: 0.3em;
+  display: flex;
   font-weight: 700;
-  letter-spacing: 1px;
   font-size: 1.1em;
+  align-items: center;
+  filter: drop-shadow(0 1px 1px var(--surface-shadow1));
 }
 
-.price {
+.inner_card img {
+  width: 3em;
+}
+
+.inner_card .name {
+  font-size: 1.1em;
   font-weight: 500;
+  text-shadow: none;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.559));
+}
+
+.inner_card .symbol {
+  font-size: 0.9em;
+  color: var(--text4);
 }
 
 @media screen and (max-width: 768px) {
-  .list-container {
+  .currencies {
     gap: 2em;
   }
 
