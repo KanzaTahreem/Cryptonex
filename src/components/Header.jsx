@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
+import { BiSearch } from 'react-icons/bi';
 import { userInput } from '../redux/AllCoins/coins';
+import headerImg from '../assets/images/header.png';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -10,12 +12,19 @@ const Header = () => {
   };
 
   return (
-    <div className="header-container">
-      <h2 className="quote" data-testid="quote">The future of Money is digital currency</h2>
-      <form>
-        <input type="text" name="name" id="name" placeholder="Search here..." onChange={handleSearch} data-testid="input" />
-      </form>
-    </div>
+    <header>
+      <div className="inner_header">
+        <div>
+          <h2>Hi, there 👋</h2>
+          <p>Ready to start your day with some coins?</p>
+          <form>
+            <input type="text" name="name" id="name" placeholder="Search here..." onChange={handleSearch} data-testid="input" />
+            <BiSearch />
+          </form>
+        </div>
+        <img src={headerImg} alt="girl working on laptop" />
+      </div>
+    </header>
   );
 };
 
