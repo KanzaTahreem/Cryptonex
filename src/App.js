@@ -5,11 +5,13 @@ import Navbar from './components/Navbar';
 import CryptoList from './pages/CoinsList';
 import fetchDataFromApi from './redux/AllCoins/thunk';
 import CoinDetails from './pages/CoinDetails';
+import fetchGLobalDataFromApi from './redux/Global/thunk';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(fetchGLobalDataFromApi());
     dispatch(fetchDataFromApi());
   }, []);
 
