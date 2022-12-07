@@ -129,8 +129,6 @@ You can deploy this project using:
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Author1: Rebaz Farid**
-
 - GitHub: [@KanzaTahreem](https://github.com/KanzaTahreem)
 - Twitter: [@kanza_tahreem](https://twitter.com/kanza_tahreem)
 - LinkedIn: [Kanza Tahreem](https://www.linkedin.com/in/kanza-tahreem/)
