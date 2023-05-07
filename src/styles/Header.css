@@ -1,15 +1,17 @@
 header {
   display: flex;
-  width: 80vw;
+  width: 75vw;
   margin: 0 auto;
   padding: 1em 0;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .inner_header {
   display: flex;
   height: 13em;
+  width: 100%;
   padding: 0 5em;
   border-radius: 1em;
   align-items: center;
@@ -32,8 +34,10 @@ header {
 
 .inner_header p {
   font-weight: 500;
-  color: var(--text2);
-  filter: drop-shadow(-1px 2px 2px var(--surface-shadow2));
+  line-height: 25px;
+  color: var(--text1);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
 .inner_header img {
