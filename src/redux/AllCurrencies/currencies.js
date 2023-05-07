@@ -23,7 +23,7 @@ export const userInput = (input) => ({
   input,
 });
 
-const coinsReducer = (state = initialState, action) => {
+const currenciesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_DATA:
       return {
@@ -48,4 +48,4 @@ const coinsReducer = (state = initialState, action) => {
   }
 };
 
-export default coinsReducer;
+export default currenciesReducer;

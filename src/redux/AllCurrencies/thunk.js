@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchData, FETCH_DATA, setLoading } from './coins';
+import { fetchData, FETCH_DATA, setLoading } from './currencies';
 
 const fetchDataFromApi = createAsyncThunk(FETCH_DATA, async (_, thunkApi) => {
   thunkApi.dispatch(setLoading(true));
-  const response = await fetch('https://cryptfacts.up.railway.app/v4/details', {
+  const response = await fetch('http://localhost:3005/v4/details', {
     method: 'GET',
   });
 

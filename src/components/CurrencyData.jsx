@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CoinsData = (props) => {
+const CurrencyData = (props) => {
   const {
     rank, image, name, symbol, currentPrice,
     oneHourPriceChange, oneDayPriceChange, oneWeekPriceChange,
@@ -29,7 +29,7 @@ const CoinsData = (props) => {
   );
 };
 
-CoinsData.propTypes = {
+CurrencyData.propTypes = {
   rank: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -42,4 +42,4 @@ CoinsData.propTypes = {
   marketCap: PropTypes.string.isRequired,
 };
 
-export default CoinsData;
+export default CurrencyData;

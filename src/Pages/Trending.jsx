@@ -5,7 +5,7 @@ import TrendingData from '../components/TrendingData';
 import '../styles/Main.css';
 import '../styles/Details.css';
 
-const TrendingList = () => {
+const Trending = () => {
   const { trendingArray, loading } = useSelector((state) => state.trending);
 
   return (
@@ -47,4 +47,4 @@ const TrendingList = () => {
   );
 };
 
-export default TrendingList;
+export default Trending;

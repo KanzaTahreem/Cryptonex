@@ -3,19 +3,19 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import CryptoList from './pages/CoinsList';
-import CoinDetails from './pages/CoinDetails';
-import TrendingList from './pages/TrendingList';
-import fetchDataFromApi from './redux/AllCoins/thunk';
-import fetchGLobalDataFromApi from './redux/Global/thunk';
-import fetchTrendingDataFromApi from './redux/Trending/thunk';
+import Currencies from './pages/Currencies';
+import Details from './pages/Details';
+import Trending from './pages/Trending';
+import fetchDataFromApi from './redux/AllCurrencies/thunk';
+import fetchGLobalDataFromApi from './redux/GlobalCurrencies/thunk';
+import fetchTrendingDataFromApi from './redux/TrendingCurrencies/thunk';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGLobalDataFromApi());
     dispatch(fetchDataFromApi());
+    dispatch(fetchGLobalDataFromApi());
     dispatch(fetchTrendingDataFromApi());
   }, []);
 
@@ -32,9 +32,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/currencies" element={<CryptoList />} />
-        <Route path="/details" element={<CoinDetails />} />
-        <Route path="/trending-currencies" element={<TrendingList />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/trending-currencies" element={<Trending />} />
       </Routes>
     </>
   );

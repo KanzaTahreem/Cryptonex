@@ -9,7 +9,7 @@ export const fetchData = (payload) => ({
   payload,
 });
 
-const globalDataReducer = (state = initialState, action) => {
+const globalCurrencyReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_GLOBAL_DATA:
       return {
@@ -20,4 +20,4 @@ const globalDataReducer = (state = initialState, action) => {
   }
 };
 
-export default globalDataReducer;
+export default globalCurrencyReducer;

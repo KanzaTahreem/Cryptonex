@@ -2,12 +2,11 @@ import { React, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import NumericData from '../components/NumericData';
-import fetchChartFromApi from '../redux/CoinChart/thunk';
-import CoinChart from '../components/CoinChart';
-import '../styles/CoinDetails.css';
+import DetailsData from '../components/DetailsData';
+import fetchChartFromApi from '../redux/CurrencyChart/thunk';
+import '../styles/Details.css';
 
-const CoinDetails = () => {
+const Details = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -20,16 +19,17 @@ const CoinDetails = () => {
   const handleBackBtn = () => navigate(-1);
 
   return (
-    <section className="coin-details-container">
+    <section className="currency_details_container">
       <div className="back-btn">
         <button type="button" onClick={handleBackBtn}>
           <IoIosArrowBack />
+          {' '}
+          Back
         </button>
       </div>
-      <NumericData />
-      <CoinChart />
+      <DetailsData />
     </section>
   );
 };
 
-export default CoinDetails;
+export default Details;

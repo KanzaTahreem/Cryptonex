@@ -1,18 +1,24 @@
 import React from 'react';
 import millify from 'millify';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import CoinsData from '../components/CoinsData';
-import Header from '../components/Header';
-import GlobalData from '../components/GlobalData';
+import { BiSearch } from 'react-icons/bi';
+import { userInput } from '../redux/AllCurrencies/currencies';
+
+import CurrencyData from '../components/CurrencyData';
 import '../styles/Main.css';
 
-const CryptoList = () => {
+const Currencies = () => {
   const { filteredSearchArray, loading } = useSelector((state) => state.crypto);
-  const { globalArray } = useSelector((state) => state.global);
+
+  const dispatch = useDispatch();
+
+  const handleSearch = (e) => {
+    dispatch(userInput(e.target.value));
+  };
 
   const navigate = useNavigate();
-  const openCoinDetails = (coin) => {
+  const openCurrencyDetails = (coin) => {
     navigate('/details', {
       state: {
         coin,
@@ -21,21 +27,26 @@ const CryptoList = () => {
   };
   return (
 
-    <section className="homepage-container">
-      <Header />
-      <main>
-        <div className="global-data">
-          <GlobalData
-            activeCurrencies={millify(globalArray?.data?.active_cryptocurrencies)}
-            endIcos={millify(globalArray?.data?.ended_icos)}
-            onIcos={millify(globalArray?.data?.ongoing_icos)}
-            comingIcos={millify(globalArray?.data?.upcoming_icos)}
-            markets={millify(globalArray?.data?.markets)}
-            marketCapPercent={millify(globalArray?.data?.market_cap_percentage.btc)}
-            totalMarketCap={millify(globalArray?.data?.total_market_cap?.usd)}
-            totalVolume={millify(globalArray?.data?.total_volume.btc)}
-          />
+    <section className="coins_container">
+      <header>
+        <div>
+          <h2 className="details_title title">
+            Top 100 Crypto Currencies Data
+          </h2>
+          <h3 className="details_subtitle subtitle">
+            A comprehensive overview of the top 100 cryptocurrencies, including their
+            {' '}
+            market capitalization, price trends, trading volumes, and key features
+          </h3>
         </div>
+        <div>
+          <form>
+            <input type="text" name="name" id="name" placeholder="Search here..." onChange={handleSearch} data-testid="input" />
+            <BiSearch />
+          </form>
+        </div>
+      </header>
+      <main>
         <div className="currency-list">
           <div className="labels">
             <p>#</p>
@@ -51,9 +62,9 @@ const CryptoList = () => {
             {loading
               ? 'loading...'
               : filteredSearchArray.map((coin) => (
-                <button key={coin.id} type="button" onClick={() => openCoinDetails(coin)} className="currency_btn">
+                <button key={coin.id} type="button" onClick={() => openCurrencyDetails(coin)} className="currency_btn">
                   <li className="currency_card">
-                    <CoinsData
+                    <CurrencyData
                       rank={millify(coin?.market_cap_rank)}
                       image={coin?.image}
                       name={coin?.name}
@@ -75,4 +86,4 @@ const CryptoList = () => {
   );
 };
 
-export default CryptoList;
+export default Currencies;

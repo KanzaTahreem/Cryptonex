@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Chart } from 'react-charts';
+import '../styles/Details.css';
 
-const CoinChart = () => {
+const CurrencyChart = () => {
   const chartData = useSelector((state) => state.chart.dataArray);
 
   const data = React.useMemo(
@@ -32,7 +33,6 @@ const CoinChart = () => {
   return (
     <div
       style={{
-        width: '80vw',
         height: '400px',
       }}
     >
@@ -41,4 +41,4 @@ const CoinChart = () => {
   );
 };
 
-export default CoinChart;
+export default CurrencyChart;
