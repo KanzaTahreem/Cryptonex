@@ -9,6 +9,7 @@ import Trending from './pages/Trending';
 import fetchDataFromApi from './redux/AllCurrencies/thunk';
 import fetchGLobalDataFromApi from './redux/GlobalCurrencies/thunk';
 import fetchTrendingDataFromApi from './redux/TrendingCurrencies/thunk';
+import './styles/App.css';
 
 function App() {
   const dispatch = useDispatch();

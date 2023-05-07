@@ -2,8 +2,6 @@ import React from 'react';
 import millify from 'millify';
 import { useSelector } from 'react-redux';
 import TrendingData from '../components/TrendingData';
-import '../styles/Main.css';
-import '../styles/Details.css';
 
 const Trending = () => {
   const { trendingArray, loading } = useSelector((state) => state.trending);

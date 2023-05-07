@@ -4,9 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { BiSearch } from 'react-icons/bi';
 import { userInput } from '../redux/AllCurrencies/currencies';
-
 import CurrencyData from '../components/CurrencyData';
-import '../styles/Main.css';
 
 const Currencies = () => {
   const { filteredSearchArray, loading } = useSelector((state) => state.crypto);

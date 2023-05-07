@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import DetailsData from '../components/DetailsData';
 import fetchChartFromApi from '../redux/CurrencyChart/thunk';
-import '../styles/Details.css';
 
 const Details = () => {
   const dispatch = useDispatch();

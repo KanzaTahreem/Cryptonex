@@ -11,26 +11,36 @@
   --brand-saturation: 100%;
   --brand-lightness: 50%;
   --brand-light: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) 60%);
+  --text0-light: hsl(var(--brand-hue) 85% 43%);
   --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
   --text2-light: hsl(var(--brand-hue) 30% 30%);
+  --text3-light: hsl(var(--brand-hue) 30% 35%);
+  --text4-light: hsl(var(--brand-hue) 30% 40%);
   --surface1-light: hsl(var(--brand-hue) 25% 90%);
   --surface2-light: hsl(var(--brand-hue) 20% 99%);
   --surface3-light: hsl(var(--brand-hue) 20% 92%);
   --surface4-light: hsl(var(--brand-hue) 20% 85%);
+  --surface5-light: hsl(var(--brand-hue) 25% 88%);
   --surface-shadow-light1: hsl(var(--brand-hue) 3% 65%);
   --surface-shadow-light2: hsl(var(--brand-hue) 3% 70%);
   --surface-shadow-light3: hsl(var(--brand-hue) 3% 80%);
+  --surface-shadow-light4: hsl(var(--brand-hue) 0% 51%);
   --shadow-strength-light: 0.8em;
   --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+  --text0-dark: hsl(var(--brand-hue) 83% 33%);
   --text1-dark: hsl(var(--brand-hue) 15% 85%);
   --text2-dark: hsl(var(--brand-hue) 5% 65%);
+  --text3-dark: hsl(var(--brand-hue) 5% 75%);
+  --text4-dark: hsl(var(--brand-hue) 5% 60%);
   --surface1-dark: hsl(var(--brand-hue) 10% 10%);
   --surface2-dark: hsl(var(--brand-hue) 10% 15%);
   --surface3-dark: hsl(var(--brand-hue) 5%  20%);
   --surface4-dark: hsl(var(--brand-hue) 5% 25%);
+  --surface5-dark: hsl(var(--brand-hue) 5% 17%);
   --surface-shadow-dark1: hsl(var(--brand-hue) 50% 3%);
   --surface-shadow-dark2: hsl(var(--brand-hue) 50% 5%);
   --surface-shadow-dark3: hsl(var(--brand-hue) 50% 33.33%);
+  --surface-shadow-dark4: hsl(var(--brand-hue) 0% 0%);
   --shadow-strength-dark: 0.8em;
 }
 
@@ -38,15 +48,20 @@
   color-scheme: light;
 
   --brand: var(--brand-light);
+  --text0: var(--text0-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
+  --text3: var(--text3-light);
+  --text4: var(--text4-light);
   --surface1: var(--surface1-light);
   --surface2: var(--surface2-light);
   --surface3: var(--surface3-light);
   --surface4: var(--surface4-light);
+  --surface5: var(--surface5-light);
   --surface-shadow1: var(--surface-shadow-light1);
   --surface-shadow2: var(--surface-shadow-light2);
   --surface-shadow3: var(--surface-shadow-light3);
+  --surface-shadow4: var(--surface-shadow-light4);
   --shadow-strength: var(--shadow-strength-light);
 }
 
@@ -55,15 +70,20 @@
     color-scheme: dark;
 
     --brand: var(--brand-dark);
+    --text0: var(--text0-dark);
     --text1: var(--text1-dark);
     --text2: var(--text2-dark);
+    --text3: var(--text3-dark);
+    --text4: var(--text4-dark);
     --surface1: var(--surface1-dark);
     --surface2: var(--surface2-dark);
     --surface3: var(--surface3-dark);
     --surface4: var(--surface4-dark);
+    --surface5: var(--surface5-dark);
     --surface-shadow1: var(--surface-shadow-dark1);
     --surface-shadow2: var(--surface-shadow-dark2);
     --surface-shadow3: var(--surface-shadow-dark3);
+    --surface-shadow4: var(--surface-shadow-dark4);
     --shadow-strength: var(--shadow-strength-dark);
   }
 }
@@ -72,15 +92,20 @@
   color-scheme: light;
 
   --brand: var(--brand-light);
+  --text0: var(--text0-light);
   --text1: var(--text1-light);
   --text2: var(--text2-light);
+  --text3: var(--text3-light);
+  --text4: var(--text4-light);
   --surface1: var(--surface1-light);
   --surface2: var(--surface2-light);
   --surface3: var(--surface3-light);
   --surface4: var(--surface4-light);
+  --surface5: var(--surface5-light);
   --surface-shadow1: var(--surface-shadow-light1);
   --surface-shadow2: var(--surface-shadow-light2);
   --surface-shadow3: var(--surface-shadow-light3);
+  --surface-shadow4: var(--surface-shadow-light4);
   --shadow-strength: var(--shadow-strength-light);
 }
 
@@ -88,15 +113,20 @@
   color-scheme: dark;
 
   --brand: var(--brand-dark);
+  --text0: var(--text0-dark);
   --text1: var(--text1-dark);
   --text2: var(--text2-dark);
+  --text3: var(--text3-dark);
+  --text4: var(--text4-dark);
   --surface1: var(--surface1-dark);
   --surface2: var(--surface2-dark);
   --surface3: var(--surface3-dark);
   --surface4: var(--surface4-dark);
+  --surface5: var(--surface5-dark);
   --surface-shadow1: var(--surface-shadow-dark1);
   --surface-shadow2: var(--surface-shadow-dark2);
   --surface-shadow3: var(--surface-shadow-dark3);
+  --surface-shadow4: var(--surface-shadow-dark4);
   --shadow-strength: var(--shadow-strength-dark);
 }
 

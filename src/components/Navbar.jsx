@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { FaCoins } from 'react-icons/fa';
 import { BiTrendingUp } from 'react-icons/bi';
 import { ImHome } from 'react-icons/im';
-import '../styles/Navbar.css';
 
 const Navbar = () => (
   <section className="navbar-container">

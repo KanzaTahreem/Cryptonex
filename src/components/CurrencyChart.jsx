@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Chart } from 'react-charts';
-import '../styles/Details.css';
 
 const CurrencyChart = () => {
   const chartData = useSelector((state) => state.chart.dataArray);

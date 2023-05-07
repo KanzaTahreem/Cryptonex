@@ -1,11 +1,8 @@
 import React from 'react';
 import millify from 'millify';
 import { useSelector } from 'react-redux';
-// import Header from '../components/Header';
 import headerImg from '../assets/images/header.png';
 import GlobalData from '../components/GlobalData';
-import '../styles/Header.css';
-import '../styles/Main.css';
 
 const Home = () => {
   const { globalArray } = useSelector((state) => state.global);
