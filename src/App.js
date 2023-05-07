@@ -2,10 +2,13 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import CryptoList from './pages/CoinsList';
-import fetchDataFromApi from './redux/AllCoins/thunk';
 import CoinDetails from './pages/CoinDetails';
+import TrendingList from './pages/TrendingList';
+import fetchDataFromApi from './redux/AllCoins/thunk';
 import fetchGLobalDataFromApi from './redux/Global/thunk';
+import fetchTrendingDataFromApi from './redux/Trending/thunk';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +16,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchGLobalDataFromApi());
     dispatch(fetchDataFromApi());
+    dispatch(fetchTrendingDataFromApi());
   }, []);
 
   const setTheme = (theme) => document.firstElementChild.setAttribute('color-scheme', theme);
@@ -27,8 +31,10 @@ function App() {
 
       <Navbar />
       <Routes>
-        <Route path="/Crypto-Analysis" element={<CryptoList />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/currencies" element={<CryptoList />} />
         <Route path="/details" element={<CoinDetails />} />
+        <Route path="/trending-currencies" element={<TrendingList />} />
       </Routes>
     </>
   );
