@@ -1,11 +1,12 @@
 import '@testing-library/jest-dom';
-import { render, screen, waitFor } from '@testing-library/react';
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import store from '../../redux/store';
-import CoinDetails from '../../Pages/CoinDetails';
+import renderer from 'react-test-renderer';
+import { screen, waitFor } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
+import Details from '../pages/Details';
 
-const rocketData = [
+const detailsArray = [
   {
     id: 'bitcoin',
     symbol: 'btc',
@@ -29,26 +30,36 @@ const rocketData = [
     atl_change_percentage: 24030.98888,
   }];
 
-beforeEach(() => {
+describe('Testing Details', () => {
   jest.spyOn(global, 'fetch').mockResolvedValue({
-    json: jest.fn().mockResolvedValue(rocketData),
+    json: jest.fn().mockResolvedValue(detailsArray),
   });
-  render(
-    <Router>
-      <Provider store={store}>
-        <CoinDetails />
-      </Provider>
-    </Router>,
-  );
-});
+  let details;
+  beforeAll(async () => {
+    details = renderer
+      .create(
+        <Provider store={store}>
+          <Router>
+            <Details />
+          </Router>
+        </Provider>,
+      )
+      .toJSON();
+  });
 
-describe('CoinsList', () => {
   afterEach(() => {
     jest.restoreAllMocks();
   });
+  it('should renders correctly', () => {
+    expect(details).toBeTruthy();
+  });
 
-  it('should render two coins', async () => {
-    const ul = await screen.findByTestId('coin-stats');
+  it('should match the snapshot', () => {
+    expect(details).toMatchSnapshot();
+  });
+
+  it('should render one currency', async () => {
+    const ul = waitFor(() => screen.findByTestId('coin-stats'));
     waitFor(() => expect(ul.querySelectorAll('li').length).toBe(1));
   });
 });
