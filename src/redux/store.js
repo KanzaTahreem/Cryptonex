@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import currenciesReducer from './AllCurrencies/currencies';
-import chartReducer from './CurrencyChart/chart';
-import globalCurrencyReducer from './GlobalCurrencies/global';
-import trendingCurrencyReducer from './TrendingCurrencies/trending';
+import detailsSlice from './detailsSlice';
+import currenciesSlice from './currenciesSlice';
+import globalSlice from './globalSlice';
+import trendingSlice from './trendingSlice';
+import chartSlice from './chartSlice';
 
 const store = configureStore({
   reducer: {
-    crypto: currenciesReducer,
-    chart: chartReducer,
-    global: globalCurrencyReducer,
-    trending: trendingCurrencyReducer,
+    currency: currenciesSlice,
+    global: globalSlice,
+    trending: trendingSlice,
+    details: detailsSlice,
+    chart: chartSlice,
   },
 });
 

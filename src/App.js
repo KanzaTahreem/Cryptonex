@@ -6,23 +6,27 @@ import Home from './pages/Home';
 import Currencies from './pages/Currencies';
 import Details from './pages/Details';
 import Trending from './pages/Trending';
-import fetchDataFromApi from './redux/AllCurrencies/thunk';
-import fetchGLobalDataFromApi from './redux/GlobalCurrencies/thunk';
-import fetchTrendingDataFromApi from './redux/TrendingCurrencies/thunk';
+import { fetchCurrencies } from './redux/currenciesSlice';
+import { fetchGlobalCurrencies } from './redux/globalSlice';
+import { fetchTrendingCurrencies } from './redux/trendingSlice';
+// import { fetchDetails } from './redux/detailsSlice';
+
 import './styles/App.css';
 
 function App() {
   const dispatch = useDispatch();
+  // const { coinId } = useParams();
 
   useEffect(() => {
-    dispatch(fetchDataFromApi());
-    dispatch(fetchGLobalDataFromApi());
-    dispatch(fetchTrendingDataFromApi());
+    dispatch(fetchCurrencies());
+    dispatch(fetchGlobalCurrencies());
+    dispatch(fetchTrendingCurrencies());
+    // dispatch(fetchDetails(coinId));
   }, []);
 
   const setTheme = (theme) => document.firstElementChild.setAttribute('color-scheme', theme);
 
-  const changeTheme = (e) => setTheme(e.target.checked ? 'dark' : 'light');
+  const changeTheme = (e) => setTheme(e.target.checked ? 'light' : 'dark');
   return (
     <>
       <label className="switch" htmlFor="toggle">
@@ -34,7 +38,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/currencies" element={<Currencies />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/currency/:coinId/details" element={<Details />} />
         <Route path="/trending-currencies" element={<Trending />} />
       </Routes>
     </>
