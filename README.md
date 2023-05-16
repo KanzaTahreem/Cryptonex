@@ -16,7 +16,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -28,7 +28,7 @@
 
 # 📖 Crypto Analysis <a name="about-project"></a>
 
-**Crypto Ananlysis** is a single page web app that fetches data from [CoinGecko API](https://www.coingecko.com/en/api/documentation). The app includes the top _100_ crypto currencies, and the details of each crypto coin. It allows user to filter the coins and navigate to details page by clicking on the selected coin.
+**Cryptonex** is a single page web app that fetches data from [CoinGecko API](https://www.coingecko.com/en/api/documentation). The app includes the top _100_ cryptocurrencies, and the details of each currency. It allows user to filter the coins and navigate to details page by clicking on the selected currency.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,10 +48,10 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
+ - **The app displays the global data and the trending currencies in last 24h**
 - **The web app shows the top 100 cryptocurrencies and their data**
-- **User can can cryptocurrents from the search box without rolling around whole page**
-- **User can view the details of the selected cryptocurrency**
+- **Users can search for a particular cryptocurrency**
+- **Users can view the details of the selected currency**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://kanzatahreem.github.io/Crypto-Analysis/)
+- [Live Demo](https://cryptonex-sigma.vercel.app/)
 - [Loom Video Pesentation](https://www.loom.com/share/b75aeada007d478bac3e2bf311105a51)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -76,18 +76,20 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- git
-- node.js
-- Wbpack
-- JavaScript
+```
+  git
+  node.js
+  Wbpack
+  JavaScript
+```
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```
-  cd Crypto-Analysis
-  git clone git@github.com:KanzaTahreem/Crypto-Analysis.git
+  cd Cryptonex
+  git clone git@github.com:KanzaTahreem/Cryptonex.git
 ```
 
 ### Install
@@ -95,7 +97,6 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```
-  cd Crypto-Analysis
   npm install
 ```
 
@@ -139,11 +140,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Chart**
-- **Live Data**
 - **About Page**
 - **Exchange Rate**
-- **Asses Platforms**
+- **Available Markets**
 - **Filter by Category**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -154,7 +153,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/KanzaTahreem/Crypto-Analysis/issues).
+Feel free to check the [issues page](https://github.com/KanzaTahreem/Cryptonex/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,7 +161,7 @@ Feel free to check the [issues page](https://github.com/KanzaTahreem/Crypto-Anal
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project and want to support me make cooler projects Give this project a Star.
+If you like this project, please give this project a star ✨
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
