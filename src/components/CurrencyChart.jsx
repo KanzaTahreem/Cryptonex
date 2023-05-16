@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Chart } from 'react-charts';
 
-const CoinChart = () => {
-  const chartData = useSelector((state) => state.chart.dataArray);
+const CurrencyChart = () => {
+  const chartData = useSelector((state) => state.chart.chartArray);
 
   const data = React.useMemo(
     () => {
@@ -32,13 +32,13 @@ const CoinChart = () => {
   return (
     <div
       style={{
-        width: '80vw',
         height: '400px',
+        width: '100%',
       }}
     >
-      { chartData.prices && chartData.prices.length ? <Chart data={data} axes={axes} /> : 'Loading...'}
+      { chartData.prices && chartData.prices.length ? <Chart data={data} axes={axes} /> : <div /> }
     </div>
   );
 };
 
-export default CoinChart;
+export default CurrencyChart;

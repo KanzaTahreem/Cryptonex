@@ -4,16 +4,16 @@ import renderer from 'react-test-renderer';
 import { screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Navbar from '../components/Navbar';
+import Home from '../pages/Home';
 
-describe('Testing Navbar', () => {
-  let navbar;
+describe('Testing Home', () => {
+  let home;
   beforeAll(async () => {
-    navbar = renderer
+    home = renderer
       .create(
         <Provider store={store}>
           <Router>
-            <Navbar />
+            <Home />
           </Router>
         </Provider>,
       )
@@ -21,15 +21,16 @@ describe('Testing Navbar', () => {
   });
 
   it('should renders correctly', () => {
-    expect(navbar).toBeTruthy();
+    expect(home).toBeTruthy();
   });
 
   it('should match the snapshot', () => {
-    expect(navbar).toMatchSnapshot();
+    expect(home).toMatchSnapshot();
   });
 
-  it('should have 3 links', () => {
-    const navBarLinks = waitFor(() => screen.getByTestId('navlinks'));
-    waitFor(() => expect(navBarLinks.querySelectorAll('a').length).toBe(3));
+  it('renders the component', () => {
+    waitFor(() => expect(screen.getByText('Hi, there')).toBeInTheDocument());
+    waitFor(() => expect(screen.getByText('Are you excited to kickstart your day')).toBeInTheDocument());
+    waitFor(() => expect(screen.getAllByTestId('global-data-card')).toHaveLength(6));
   });
 });

@@ -18,7 +18,12 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
-    "no-shadow": "off"
+    "import/export": "off",
+    "no-shadow": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "max-len": "off"
   },
   "ignorePatterns": [
     "dist/",

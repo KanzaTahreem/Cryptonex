@@ -1,0 +1,52 @@
+.cssloader {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.sh1 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 0 0;
+  border-color: var(--surface5) transparent transparent transparent;
+  margin: 0 auto;
+  animation: shk1 1s ease-in-out infinite normal;
+}
+
+.sh2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 40px;
+  border-color: transparent  transparent var(--brand) transparent;
+  margin: -40px auto 0;
+  animation: shk2 1s ease-in-out infinite alternate;
+}
+
+@keyframes shk1 {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shk2 {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+.lt {
+  color: var(--text1);
+  margin: 30px auto;
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .spinner_container {
+    margin-left: 150px;
+  }
+}

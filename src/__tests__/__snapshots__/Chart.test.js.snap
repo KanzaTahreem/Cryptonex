@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Testing Chart should match the snapshot 1`] = `
 <div
   style={
     Object {
       "height": "400px",
-      "width": "80vw",
+      "width": "100%",
     }
   }
 >
-  Loading...
+  <div />
 </div>
 `;

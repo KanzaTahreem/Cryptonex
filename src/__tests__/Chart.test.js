@@ -1,19 +1,18 @@
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Navbar from '../components/Navbar';
+import CurrencyChart from '../components/CurrencyChart';
 
-describe('Testing Navbar', () => {
-  let navbar;
+describe('Testing Chart', () => {
+  let chart;
   beforeAll(async () => {
-    navbar = renderer
+    chart = renderer
       .create(
         <Provider store={store}>
           <Router>
-            <Navbar />
+            <CurrencyChart />
           </Router>
         </Provider>,
       )
@@ -21,15 +20,10 @@ describe('Testing Navbar', () => {
   });
 
   it('should renders correctly', () => {
-    expect(navbar).toBeTruthy();
+    expect(chart).toBeTruthy();
   });
 
   it('should match the snapshot', () => {
-    expect(navbar).toMatchSnapshot();
-  });
-
-  it('should have 3 links', () => {
-    const navBarLinks = waitFor(() => screen.getByTestId('navlinks'));
-    waitFor(() => expect(navBarLinks.querySelectorAll('a').length).toBe(3));
+    expect(chart).toMatchSnapshot();
   });
 });

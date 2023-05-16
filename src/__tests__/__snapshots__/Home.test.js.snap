@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home should match the snapshot 1`] = `
+<section
+  className="homepage_container"
+>
+  <header>
+    <div
+      className="inner_header"
+    >
+      <div>
+        <h2>
+          Hi, there 👋
+        </h2>
+        <p>
+          Are you excited to kickstart your day with the fascinating world of cryptocurrencies?
+           
+          Let's dive into the fascinating world of cryptocurrencies together!
+        </p>
+      </div>
+      <img
+        alt="girl working on laptop"
+        src="header.png"
+      />
+    </div>
+  </header>
+  <main>
+    <div
+      className="global-data"
+    >
+      <div
+        className="global-data-card"
+      >
+        <p>
+          Active Currencies
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Ending Icos
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Ongoing Icos
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Upcoming Icos
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Total Markets
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          24h Market Change
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Total Market Cap
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+      <div
+        className="global-data-card"
+        data-testId="global-data-card"
+      >
+        <p>
+          Total Volume
+        </p>
+        <p>
+          undefined
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+`;
