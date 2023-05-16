@@ -2,9 +2,18 @@ import React from 'react';
 import millify from 'millify';
 import { useSelector } from 'react-redux';
 import TrendingData from '../components/TrendingData';
+import Loader from '../components/Loader';
 
 const Trending = () => {
-  const { trendingArray, loading } = useSelector((state) => state.trending);
+  const { trendingArray, loading, error } = useSelector((state) => state.trending);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <section className="trending_currency_list">
@@ -24,21 +33,19 @@ const Trending = () => {
           <p>Score</p>
         </div>
         <ul className="currencies">
-          {loading
-            ? 'loading...'
-            : trendingArray?.coins?.map((coin) => (
-              <div key={coin.item.id} className="currency_btn trending_btn">
-                <li className="currency_card">
-                  <TrendingData
-                    rank={millify(coin?.item?.market_cap_rank)}
-                    name={millify(coin?.item?.name)}
-                    thumb={millify(coin?.item?.large)}
-                    symbol={coin?.item?.symbol.toUpperCase()}
-                    score={millify(coin?.item?.score)}
-                  />
-                </li>
-              </div>
-            ))}
+          {trendingArray?.coins?.map((coin) => (
+            <div key={coin.item.id} className="currency_btn trending_btn">
+              <li className="currency_card">
+                <TrendingData
+                  rank={millify(coin?.item?.market_cap_rank)}
+                  name={millify(coin?.item?.name)}
+                  thumb={millify(coin?.item?.large)}
+                  symbol={coin?.item?.symbol.toUpperCase()}
+                  score={millify(coin?.item?.score)}
+                />
+              </li>
+            </div>
+          ))}
         </ul>
       </div>
     </section>

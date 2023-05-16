@@ -1,6 +1,5 @@
 import millify from 'millify';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { ImStatsBars } from 'react-icons/im';
 import { GiProgression } from 'react-icons/gi';
 import { RiExchangeFundsFill } from 'react-icons/ri';
@@ -14,41 +13,50 @@ import {
 } from 'react-icons/bi';
 import CurrencyChart from './CurrencyChart';
 
-const DetailsData = () => {
-  const location = useLocation();
-  const { coin } = location.state || {};
+const DetailsData = (props) => {
+  const {
+    name, symbol, marketCapRank, currentPrice,
+    marketCap, marketCapChange24h, high24h, low24h,
+    priceChange24h, priceChangePercentage24h,
+    marketCapChangePercentage24, ath, athChangePercentage,
+    atl, atlChangePercentage, fullyDilutedValuation, totalVolume,
+    totalSupply, circulatingSupply, maxSupply, publicInterestScore,
+    description, homepage, blockChainSite, forum, chatUrl,
+    announcementUrl, github, redditUrl,
+  } = props;
 
   return (
     <>
       <div className="currency_price_chart">
         <h2 className="details_title">
-          {coin?.name}
+          {name}
           {' '}
-          {`(${coin?.symbol?.toUpperCase()})`}
+          {`(${symbol?.toUpperCase()})`}
           {' '}
           Price Chart
         </h2>
         <h3 className="details_subtitle">
           View the current live price of
           {' '}
-          {coin?.name}
+          {name}
           {' '}
           is displayed in US dollars, providing real-time updates on the value of the cryptocurrency
         </h3>
         <CurrencyChart />
       </div>
+
       <div className="currency_price_statistics" data-testid="coin-stats">
         <h2 className="details_title">
-          {coin?.name}
+          {name}
           {' '}
-          {`(${coin?.symbol?.toUpperCase()})`}
+          {`(${symbol?.toUpperCase()})`}
           {' '}
           Statistics
         </h2>
         <h3 className="details_subtitle">
           An overview of
           {' '}
-          {coin?.name}
+          {name}
           &apos;s statistics, including its market capitalization, trading volume, and price trends,
           {' '}
           provides valuable insights
@@ -60,84 +68,78 @@ const DetailsData = () => {
                 <span><BsHash /></span>
                 <span>Rank</span>
               </p>
-              <p className="value">{coin?.market_cap_rank}</p>
+              <p className="value">{marketCapRank}</p>
             </div>
             <div>
               <p className="name">
                 <span><BiDollarCircle /></span>
                 <span>Price</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.current_price)}`}</p>
+              <p className="value">{`$ ${millify(currentPrice)}`}</p>
             </div>
             <div>
               <p className="name">
                 <span><GiProgression /></span>
                 <span> Market Cap</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.market_cap)}`}</p>
+              <p className="value">{`$ ${millify(marketCap)}`}</p>
             </div>
-
             <div>
               <p className="name">
                 <span><RiExchangeFundsFill /></span>
                 <span>Market Cap Change</span>
               </p>
               <p className="value">
-                {`$ ${millify(coin?.market_cap_change_24h)}`}
+                {`$ ${millify(marketCapChange24h)}`}
                 {' / '}
-                {`${millify(coin?.market_cap_change_percentage_24h)} %`}
+                {`${millify(marketCapChangePercentage24)} %`}
               </p>
             </div>
-
             <div>
               <p className="name">
                 <span><HiArrowNarrowUp /></span>
                 <span>24h High Price</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.high_24h)}`}</p>
+              <p className="value">{`$ ${millify(high24h)}`}</p>
             </div>
-
             <div>
               <p className="name">
                 <span><HiArrowNarrowDown /></span>
                 <span>24h Low Price</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.low_24h)}`}</p>
+              <p className="value">{`$ ${millify(low24h)}`}</p>
             </div>
-
             <div>
               <p className="name">
                 <span><ImStatsBars /></span>
                 <span>24h Price Change</span>
               </p>
               <p className="value">
-                {`$ ${millify(coin?.price_change_24h)}`}
+                {`$ ${millify(priceChange24h)}`}
                 {' / '}
-                {`${millify(coin?.price_change_percentage_24h)} %`}
+                {`${millify(priceChangePercentage24h)} %`}
               </p>
             </div>
-
             <div>
               <p className="name">
                 <span><BsGraphUp /></span>
                 <span>All Time High Value</span>
               </p>
               <p className="value">
-                {`$ ${millify(coin?.ath)}`}
+                {`$ ${millify(ath)}`}
                 {' / '}
-                {`${millify(coin?.ath_change_percentage)} %`}
+                {`${millify(athChangePercentage)} %`}
               </p>
             </div>
-
             <div>
               <p className="name">
                 <span><BsGraphDown /></span>
                 <span>All Time Low Value</span>
               </p>
               <p className="value">
-                {`$ ${millify(coin?.atl)}`}
+                {`$ ${millify(atl)}`}
                 {' / '}
-                {`${millify(coin?.atl_change_percentage)} %`}
+                {`${millify(atlChangePercentage)} %`}
               </p>
             </div>
           </div>
@@ -148,23 +150,21 @@ const DetailsData = () => {
                 <span><BiCoinStack /></span>
                 <span>Dilutated Valuation</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.fully_diluted_valuation)}`}</p>
+              <p className="value">{`$ ${millify(fullyDilutedValuation)}`}</p>
             </div>
-
             <div>
               <p className="name">
                 <span><BiDumbbell /></span>
                 <span>Total Volume</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.total_volume)}`}</p>
+              <p className="value">{`$ ${millify(totalVolume)}`}</p>
             </div>
-
             <div>
               <p className="name">
                 <span><HiOutlineGlobeAlt /></span>
                 <span>Total Supply</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.total_supply)}`}</p>
+              <p className="value">{`$ ${millify(totalSupply)}`}</p>
             </div>
 
             <div>
@@ -172,7 +172,7 @@ const DetailsData = () => {
                 <span><MdSettingsBackupRestore /></span>
                 <span>Circulating Supply</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.circulating_supply)}`}</p>
+              <p className="value">{`$ ${millify(circulatingSupply)}`}</p>
             </div>
 
             <div>
@@ -180,15 +180,81 @@ const DetailsData = () => {
                 <span><MdPriorityHigh /></span>
                 <span>Maximum Supply</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.max_supply)}`}</p>
+              <p className="value">{`$ ${millify(maxSupply)}`}</p>
             </div>
 
             <div>
               <p className="name">
                 <span><BsCheck2All /></span>
-                <span>Total Supply</span>
+                <span>Interest Score</span>
               </p>
-              <p className="value">{`$ ${millify(coin?.total_supply)}`}</p>
+              <p className="value">{publicInterestScore}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="other_info">
+        <h2 className="details_title">
+          {name}
+          {' '}
+          {`(${symbol?.toUpperCase()})`}
+          {' '}
+          Additional Information
+        </h2>
+        <div className="columns">
+          <div className="description">
+            {description}
+          </div>
+          <div className="links">
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>Official Forum</span>
+              </p>
+              <p className="value">{forum}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>Homepage</span>
+              </p>
+              <p className="value">{homepage}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>Blockchain</span>
+              </p>
+              <p className="value">{blockChainSite}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>Chat</span>
+              </p>
+              <p className="value">{chatUrl}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>News</span>
+              </p>
+              <p className="value">{announcementUrl}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>GitHub</span>
+              </p>
+              <p className="value">{github}</p>
+            </div>
+            <div>
+              <p className="name">
+                <span><GiProgression /></span>
+                <span>Reddit</span>
+              </p>
+              <p className="value">{redditUrl}</p>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const CurrencyData = (props) => {
   const {
@@ -17,29 +16,34 @@ const CurrencyData = (props) => {
           className="img"
         />
         <p className="name">{name}</p>
-        <p className="symbol">{symbol}</p>
       </div>
-      <p className="price">{currentPrice}</p>
-      <p className="one_hour_price">{oneHourPriceChange}</p>
-      <p className="one_day_price">{oneDayPriceChange}</p>
-      <p className="one_week_price">{oneWeekPriceChange}</p>
-      <p className="total_volume">{totalVolume}</p>
-      <p className="market_cap">{marketCap}</p>
+      <p className="symbol">{symbol}</p>
+      <p className="price">
+        <span>Price:</span>
+        {currentPrice}
+      </p>
+      <p className="one_hour_price">
+        <span>1h Price:</span>
+        {oneHourPriceChange}
+      </p>
+      <p className="one_day_price">
+        <span>1d Price:</span>
+        {oneDayPriceChange}
+      </p>
+      <p className="one_week_price">
+        <span>1w Price:</span>
+        {oneWeekPriceChange}
+      </p>
+      <p className="total_volume">
+        <span>Volume:</span>
+        {totalVolume}
+      </p>
+      <p className="market_cap">
+        <span>Mkt Cap:</span>
+        {marketCap}
+      </p>
     </div>
   );
-};
-
-CurrencyData.propTypes = {
-  rank: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  symbol: PropTypes.string.isRequired,
-  currentPrice: PropTypes.string.isRequired,
-  oneHourPriceChange: PropTypes.string.isRequired,
-  oneDayPriceChange: PropTypes.string.isRequired,
-  oneWeekPriceChange: PropTypes.string.isRequired,
-  totalVolume: PropTypes.string.isRequired,
-  marketCap: PropTypes.string.isRequired,
 };
 
 export default CurrencyData;

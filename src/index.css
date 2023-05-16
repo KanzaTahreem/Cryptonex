@@ -130,14 +130,20 @@
   --shadow-strength: var(--shadow-strength-dark);
 }
 
+a {
+  color: var(--text0);
+}
+
 .switch {
-  top: 20%;
-  left: 6%;
+  position: relative;
+  left: 0;
+  right: 0;
+  float: right;
+  margin: 1.5rem 2rem;
   width: 51px;
   height: 21px;
-  z-index: 100;
+  z-index: 102;
   display: flex;
-  position: fixed;
 }
 
 .switch input {
@@ -182,4 +188,13 @@ input:checked + .slider::before {
 
 .slider.round::before {
   border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .switch {
+    top: 20%;
+    left: 6%;
+    position: fixed;
+    margin: 0;
+  }
 }

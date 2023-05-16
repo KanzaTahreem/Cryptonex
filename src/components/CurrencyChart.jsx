@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Chart } from 'react-charts';
 
 const CurrencyChart = () => {
-  const chartData = useSelector((state) => state.chart.dataArray);
+  const chartData = useSelector((state) => state.chart.chartArray);
 
   const data = React.useMemo(
     () => {
@@ -33,9 +33,10 @@ const CurrencyChart = () => {
     <div
       style={{
         height: '400px',
+        width: '100%',
       }}
     >
-      { chartData.prices && chartData.prices.length ? <Chart data={data} axes={axes} /> : 'Loading...'}
+      { chartData.prices && chartData.prices.length ? <Chart data={data} axes={axes} /> : <div /> }
     </div>
   );
 };

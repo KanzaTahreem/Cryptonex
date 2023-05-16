@@ -3,9 +3,19 @@ import millify from 'millify';
 import { useSelector } from 'react-redux';
 import headerImg from '../assets/images/header.png';
 import GlobalData from '../components/GlobalData';
+import Loader from '../components/Loader';
 
 const Home = () => {
-  const { globalArray } = useSelector((state) => state.global);
+  const { globalArray, loading, error } = useSelector((state) => state.global);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <section className="homepage_container">
       <header>
