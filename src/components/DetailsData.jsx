@@ -3,13 +3,17 @@ import React from 'react';
 import { ImStatsBars } from 'react-icons/im';
 import { GiProgression } from 'react-icons/gi';
 import { RiExchangeFundsFill } from 'react-icons/ri';
-import { MdSettingsBackupRestore, MdPriorityHigh } from 'react-icons/md';
-import { HiArrowNarrowUp, HiArrowNarrowDown, HiOutlineGlobeAlt } from 'react-icons/hi';
 import {
-  BsGraphUp, BsGraphDown, BsCheck2All, BsHash,
+  MdSettingsBackupRestore, MdPriorityHigh, MdOutlineForum, MdHome,
+} from 'react-icons/md';
+import { HiArrowNarrowUp, HiArrowNarrowDown, HiOutlineGlobeAlt } from 'react-icons/hi';
+import { SiHiveBlockchain } from 'react-icons/si';
+import { AiFillGithub } from 'react-icons/ai';
+import {
+  BsGraphUp, BsGraphDown, BsCheck2All, BsHash, BsFillChatDotsFill, BsReddit,
 } from 'react-icons/bs';
 import {
-  BiCoinStack, BiDollarCircle, BiDumbbell,
+  BiCoinStack, BiDollarCircle, BiDumbbell, BiNews,
 } from 'react-icons/bi';
 import CurrencyChart from './CurrencyChart';
 
@@ -209,49 +213,49 @@ const DetailsData = (props) => {
           <div className="links">
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><MdOutlineForum /></span>
                 <span>Official Forum</span>
               </p>
               <p className="value">{forum}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><MdHome /></span>
                 <span>Homepage</span>
               </p>
               <p className="value">{homepage}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><SiHiveBlockchain /></span>
                 <span>Blockchain</span>
               </p>
               <p className="value">{blockChainSite}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><BsFillChatDotsFill /></span>
                 <span>Chat</span>
               </p>
               <p className="value">{chatUrl}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><BiNews /></span>
                 <span>News</span>
               </p>
               <p className="value">{announcementUrl}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><AiFillGithub /></span>
                 <span>GitHub</span>
               </p>
               <p className="value">{github}</p>
             </div>
             <div>
               <p className="name">
-                <span><GiProgression /></span>
+                <span><BsReddit /></span>
                 <span>Reddit</span>
               </p>
               <p className="value">{redditUrl}</p>
